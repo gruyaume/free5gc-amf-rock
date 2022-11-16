@@ -1,0 +1,20 @@
+name: free5gc-amf
+summary: free5GC AMF
+description: free5GC AMF
+version: "1.1.1"
+license: Apache-2.0
+base: bare
+build-base: ubuntu:22.04
+platforms:
+  amd64:
+
+cmd: ["amf -c /free5gc/config/amfcfg.yaml"]
+
+parts:
+  free5gc-amf:
+    plugin: go
+    source: https://github.com/free5gc/amf
+    source-type: git
+    source-tag: v1.1.1
+    organize:
+      bin/cmd: bin/amf
